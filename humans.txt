@@ -1,0 +1,26 @@
+# humanstxt.org
+
+# TEAM
+
+Designer & Developer: Thomas J Bradley <hey@thomasjbradley.ca>
+Site: http://thomasjbradley.ca
+GitHub: https://github.com/thomasjbradley
+Twitter: @thomasjbradley
+Location: Ottawa, Canada
+
+# TECHNOLOGY
+
+## Software
+
+- VS Code
+- Git + GitHub
+- Jekyll
+- Markdown
+- PostCSS
+- UglifyJS
+
+## Hosting
+
+- KeyCDN
+- CloudFlare
+- Let’s Encrypt

@@ -1,0 +1,6 @@
+# www.robotstxt.org
+
+Sitemap: https://videos.learntheweb.courses/sitemap.xml
+
+User-Agent: *
+Disallow:

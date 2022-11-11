@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+_site
+tmp
+.jekyll-metadata
+.jekyll-cache
+css
+js
