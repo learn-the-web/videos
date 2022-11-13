@@ -1,0 +1,16 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "{{vid.title}}",
+    "description": "{{page.desc}}",
+    "url": "https://videos.learntheweb.courses{{page.url}}",
+    "image": "https://videos.learntheweb.courses/favicon-152.png",
+    "embedUrl": "{{site.cdn}}/{{page.name|replace:'.md',''}}/{{vid.id}}.mp4",
+    "copyrightYear": "{{site.time | date:'%Y'}}",
+    "keywords": "{{page.keywords}}",
+    "author": {
+      "@id": "#thomasjbradley"
+    }
+  }
+]

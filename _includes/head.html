@@ -1,0 +1,41 @@
+{% jsonball package from file package.json %}
+
+<meta name="description" content="{{page.desc}}">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<link rel="author" href="/humans.txt">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="canonical" href="https://videos.learntheweb.courses{{page.url | replace: 'index.html', ''}}">
+
+<link href="/fonts/alegreyasans-regular.woff" rel="preload" as="font">
+<link href="/fonts/alegreyasans-italic.woff" rel="preload" as="font">
+<link href="/fonts/alegreyasans-bold.woff" rel="preload" as="font">
+<link href="/fonts/sourcecodepro-regular.woff" rel="preload" as="font">
+<link href="/fonts/sourcecodepro-bold.woff" rel="preload" as="font">
+<link href="/css/main.css?v={{package.version}}" rel="stylesheet">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+<meta name="msapplication-TileImage" content="/favicon-144.png">
+<meta name="msapplication-TileColor" content="#00deae">
+
+<link rel="profile" href="http://osprotocol.com">
+<meta property="os:repo" content="https://github.com/learn-the-web/videos">
+<meta property="os:rcs_type" content="git">
+<meta property="os:src" content="git@github.com:learn-the-web/videos.git">
+<meta property="os:issue" content="https://github.com/learn-the-web/videos/issues">
+<link rel="license" href="https://github.com/learn-the-web/videos.github.io/blob/master/LICENSE">
+<link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+<link rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+<meta name="application-name" content="Learn the Web">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_CA">
+<meta property="og:title" content="{{page.title}} · Videos · Learn the Web">
+<meta property="og:url" content="https://videos.learntheweb.courses{{page.url | replace: 'index.html', ''}}">
+<meta property="og:image" content="https://videos.learntheweb.courses{{the_favicon | strip | strip_newlines}}">
+<meta property="og:site_name" content="Learn the Web">
+<meta property="og:description" content="{% if page.desc %}{{page.desc | strip | strip_newlines}}{% else %}{{details.desc | strip | strip_newlines}}{% endif %}">
+<meta property="og:updated_time" content="{% capture lastmod_date %}{% last_modified {{ page.path }} %}{% endcapture %}{{ lastmod_date | date_to_xmlschema }}">

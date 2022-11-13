@@ -1,0 +1,13 @@
+{
+  "name": "videos-learn-the-web",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "minify-site": "html-minifier --file-ext=html --input-dir=_site --output-dir=_site --config-file=.html-minifier.json",
+    "build-site": "bundle exec jekyll build && npm run minify-site",
+    "build": "npm run build-site",
+    "deploy-site": "rsync --recursive --checksum --delete --delete-excluded --verbose --compress --chmod=D2755,F644 --exclude-from=rsync-exclude.txt ./_site/ keycdn:learntheweb/",
+    "deploy": "npm run deploy-site",
+    "build-n-deploy": "npm run build && npm run deploy"
+  }
+}

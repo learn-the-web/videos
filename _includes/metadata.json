@@ -1,0 +1,69 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Learn The Web",
+    "description": "A complete and logical web development series of tutorials and videos for graphic designers.",
+    "url": "https://learntheweb.courses",
+    "image": "https://learntheweb.courses/favicon-152.png",
+    "video": {
+      "@type": "VideoObject",
+      "name": "Introduction to Learn the Web",
+      "description": "A quick introduction to the website, its content & features, provided by Professor of the Open Web Thomas J Bradley",
+      "uploadDate": "2015-04-22",
+      "thumbnailURL": "https://learntheweb.courses/images/channel-intro-video.jpg",
+      "embedUrl": "https://www.youtube.com/embed/c26Wbq99Ebw"
+    },
+    "copyrightYear": "{{site.time | date:'%Y'}}",
+    "keywords": "web, design, html, css, course, lessons, graphic design, development, javascript, jekyll, code, learn",
+    "author": {
+      "@id": "#thomasjbradley"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "PostalAddress",
+    "@id": "#learntheweb-address",
+    "name": "Learn the Web",
+    "url": "https://learntheweb.courses",
+    "addressLocality": "Ottawa",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Shool",
+    "name": "Learn the Web",
+    "image": "https://learntheweb.courses/favicon-152.png",
+    "logo": "https://learntheweb.courses/favicon-152.png",
+    "url": "https://learntheweb.courses",
+    "description": "Ontario college graphic design diploma program teaching students up-to-date courses in print, mobile, web & motion.",
+    "address": {
+      "@id": "#learntheweb-address"
+    },
+    "sameAs": ["https://github.com/learn-the-web"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "@id": "#learntheweb",
+    "name": "Learn the Web",
+    "image": "https://learntheweb.courses/favicon-152.png",
+    "logo": "https://learntheweb.courses/favicon-152.png",
+    "url": "https://learntheweb.courses",
+    "description": "Ontario college graphic design diploma program teaching students up-to-date courses in print, mobile, web & motion.",
+    "address": {
+      "@id": "#learntheweb-address"
+    },
+    "sameAs": ["https://github.com/learn-the-web"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "AlignmentObject",
+    "@id": "#higher-education",
+    "alignmentType": "teaches",
+    "educationalFramework": "Higher Education",
+    "targetName": "Higher Education",
+    "targetUrl": "http://purl.org/ASN/scheme/ASNEducationLevel/HigherEducation"
+  }
+]

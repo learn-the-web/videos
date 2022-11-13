@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>{{page.title}} · Videos · Learn the Web</title>
+  {% include head.html %}
+</head>
+<body {% if layout.body_class %}class="{{layout.body_class}}"{% endif %}>
+
+  <header role="banner">
+    <a href="/"><img src="/images/logo.svg" alt="Learn the Web"></a>
+    <div>
+      <h1>{{page.title}}</h1>
+      <p>{{page.desc}}</p>
+    </div>
+  </header>
+
+  <main role="main">
+    <nav role="navigation">
+      <ol>
+        {% for vid in page.videos %}
+          <li>
+            <a href="#{{vid.id}}" aria-controls="{{vid.id}}"><span>{{vid.title}}</span></a>
+          </li>
+        {% endfor %}
+      </ol>
+    </nav>
+    <section>
+      {% for vid in page.videos %}
+        <article id="{{vid.id}}">
+          <h2>{{vid.title}}</h2>
+          <video src="{{site.cdn}}/{{page.name|replace:'.md',''}}/{{vid.id}}.mp4" controls crossorigin="anonymous"></video>
+          <script type="application/ld+json">{% include video-metadata.json %}</script>
+        </article>
+      {% endfor %}
+    </section>
+  </main>
+
+  {% include copyright.html %}
+
+  <script src="/js/main.js"></script>
+  {% include thomasjbradley.html %}
+  <script type="application/ld+json">{% include metadata.json %}</script>
+
+</body>
+</html>

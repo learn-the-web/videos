@@ -1,0 +1,30 @@
+permalink: pretty
+port: 4003
+highlighter: none
+
+exclude:
+  - "README.md"
+  - "LICENSE"
+  - "package.json"
+  - "*.lock"
+  - "Gemfile*"
+
+collections:
+  playlists:
+    output: true
+    permalink: /playlists/:path/
+  embeds:
+    output: true
+    permalink: /playlists/:path/embed.html
+
+defaults:
+  - scope:
+      path: "_playlists"
+    values:
+      layout: playlist
+  - scope:
+      path: "_embeds"
+    values:
+      layout: embed
+
+cdn: "/video-assets"
