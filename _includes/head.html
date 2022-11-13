@@ -35,7 +35,7 @@
 <meta property="og:locale" content="en_CA">
 <meta property="og:title" content="{{page.title}} · Videos · Learn the Web">
 <meta property="og:url" content="https://videos.learntheweb.courses{{page.url | replace: 'index.html', ''}}">
-<meta property="og:image" content="https://videos.learntheweb.courses{{the_favicon | strip | strip_newlines}}">
+<meta property="og:image" content="https://videos.learntheweb.courses/favicon-152.png">
 <meta property="og:site_name" content="Learn the Web">
-<meta property="og:description" content="{% if page.desc %}{{page.desc | strip | strip_newlines}}{% else %}{{details.desc | strip | strip_newlines}}{% endif %}">
+<meta property="og:description" content="{{page.desc | strip | strip_newlines}}">
 <meta property="og:updated_time" content="{% capture lastmod_date %}{% last_modified {{ page.path }} %}{% endcapture %}{{ lastmod_date | date_to_xmlschema }}">

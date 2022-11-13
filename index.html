@@ -1,0 +1,42 @@
+---
+title: "Videos · Learn the Web"
+desc: "Learning & instruction video playlist companion site to the Learn the Web curriculum."
+---
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Videos · Learn the Web</title>
+  {% include head.html %}
+</head>
+<body>
+
+  <header role="banner">
+    <a href="/"><img src="/images/logo.svg" alt="Learn the Web"></a>
+    <div>
+      <h1>Videos</h1>
+      <p>Learning & instruction video playlist companion site to the Learn the Web curriculum.</p>
+    </div>
+  </header>
+
+  <main class="all-playlists" role="main">
+    <ul>
+      {% for playlist in site.playlists %}
+        <li>
+          <a href="{{playlist.url}}">
+            <svg><use xlink:href="/images/icons.svg#icon-play"/></svg>
+            <strong>{{playlist.title}}</strong>
+            <span>{{playlist.videos|size}} videos</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
+
+  {% include copyright.html %}
+
+  {% include thomasjbradley.html %}
+  <script type="application/ld+json">{% include metadata.json %}</script>
+
+</body>
+</html>

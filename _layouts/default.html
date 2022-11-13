@@ -13,9 +13,10 @@
       <h1>{{page.title}}</h1>
       <p>{{page.desc}}</p>
     </div>
+    <a href="https://learntheweb.courses/topics/{{page.topic}}/">Read&nbsp;topic&nbsp;&rarr;</a>
   </header>
 
-  <main role="main">
+  <main class="playlist" role="main">
     <nav role="navigation">
       <ol>
         {% for vid in page.videos %}
