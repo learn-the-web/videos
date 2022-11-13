@@ -3,6 +3,7 @@
 Videos playlists for all the articles, tutorials & exercises on Learn the Web.
 
 ### [☛ Learn the Web](https://learntheweb.courses/)
+### [☛ Videos · Learn the Web](https://videos.learntheweb.courses/)
 
 ---
 

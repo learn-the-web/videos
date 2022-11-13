@@ -27,4 +27,4 @@ defaults:
     values:
       layout: embed
 
-cdn: "/video-assets"
+cdn: "https://video-assets.learntheweb.courses"
