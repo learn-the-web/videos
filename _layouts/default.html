@@ -1,3 +1,5 @@
+{% jsonball package from file package.json %}
+
 <!DOCTYPE html>
 <html lang="en-ca">
 <head>
@@ -39,7 +41,7 @@
 
   {% include copyright.html %}
 
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js?v={{package.version}}"></script>
   {% include thomasjbradley.html %}
   <script type="application/ld+json">{% include metadata.json %}</script>
 

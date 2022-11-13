@@ -1,0 +1,617 @@
+:root {
+  /**
+   * ===================================================================================
+   * WEBSITE CONFIGURATION
+   * ===================================================================================
+   */
+  /* === FONT-SIZE === */
+  --base-size-min: 1; /* rem */
+  --base-size-max: 1.4; /* rem */
+  --base-size-scale: 1.125;
+  /* Define the screen widths where the font-size should flex */
+  --base-size-screen-range-start: 25; /* rem */
+  --base-size-screen-range-end: 90; /* rem */
+  /* === LINE-HEIGHT === */
+  --base-lh-min: 1.3;
+  --base-lh-max: 1.5;
+  /* Define the screen widths where the line-height should flex */
+  --base-lh-screen-range-start: 25; /* rem */
+  --base-lh-screen-range-end: 60; /* rem */
+  /**
+   * ===================================================================================
+   * CALCULATE LINEAR BASE FONT-SIZE
+   * DO NOT TOUCH!
+   * SOURCE: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+   * ===================================================================================
+   */
+  --base-size-slope-size: calc(var(--base-size-max) - var(--base-size-min));
+  --base-size-slope-screen: calc(
+    var(--base-size-screen-range-end) - var(--base-size-screen-range-start)
+  );
+  --base-size-slope: calc(
+    var(--base-size-slope-size) / var(--base-size-slope-screen)
+  );
+  --base-size-intersection: calc(
+    -1 * var(--base-size-screen-range-start) * var(--base-size-slope) + var(--base-size-min)
+  );
+  --base-size-viewport: calc(var(--base-size-slope) * 100vw);
+  --base-size: clamp(
+    var(--base-size-min) * 1rem,
+    var(--base-size-intersection) * 1rem + var(--base-size-viewport),
+    var(--base-size-max) * 1rem
+  );
+  /**
+   * ===================================================================================
+   * CALCULATE LINEAR BASE LINE-HEIGHT
+   * DO NOT TOUCH!
+   * ===================================================================================
+   */
+  --base-lh-slope-lh: calc(var(--base-lh-max) - var(--base-lh-min));
+  --base-lh-slope-screen: calc(
+    var(--base-lh-screen-range-end) - var(--base-lh-screen-range-start)
+  );
+  --base-lh-slope: calc(var(--base-lh-slope-lh) / var(--base-lh-slope-screen));
+  --base-lh-intersection: calc(
+    -1 * var(--base-lh-screen-range-start) * var(--base-lh-slope) + var(--base-lh-min)
+  );
+  --base-lh-viewport: calc(var(--base-lh-slope) * 100vw);
+  --base-lh: clamp(
+    var(--base-lh-min) * var(--base-size),
+    var(--base-lh-intersection) * var(--base-size) + var(--base-lh-viewport),
+    var(--base-lh-max) * var(--base-size)
+  );
+  /**
+   * ===================================================================================
+   * USABLE FONT-SIZE VARIBALES
+   * ===================================================================================
+   */
+  --size-tenamega: calc(var(--size-tenakilo) * var(--base-size-scale));
+  --size-tenakilo: calc(var(--size-tena) * var(--base-size-scale));
+  --size-tena: calc(var(--size-nina) * var(--base-size-scale));
+  --size-nina: calc(var(--size-yotta) * var(--base-size-scale));
+  --size-yotta: calc(var(--size-zetta) * var(--base-size-scale));
+  --size-zetta: calc(var(--size-exa) * var(--base-size-scale));
+  --size-exa: calc(var(--size-peta) * var(--base-size-scale));
+  --size-peta: calc(var(--size-tera) * var(--base-size-scale));
+  --size-tera: calc(var(--size-giga) * var(--base-size-scale));
+  --size-giga: calc(var(--size-mega) * var(--base-size-scale));
+  --size-mega: calc(var(--size-kilo) * var(--base-size-scale));
+  --size-kilo: 1rem; /* This seems weird, but because we set the variable font-size on `html`, `.kilo` should match its size. */
+  --size-milli: calc(var(--size-kilo) / var(--base-size-scale));
+  --size-micro: calc(var(--size-milli) / var(--base-size-scale));
+  --size-nano: calc(var(--size-micro) / var(--base-size-scale));
+  --size-pico: calc(var(--size-nano) / var(--base-size-scale));
+  /**
+   * ===================================================================================
+   * USABLE SPACE VARIABLES
+   * ===================================================================================
+   */
+  --space-2: calc(var(--space) * 2);
+  --space-3-2: calc(var(--space) * 1.5);
+  --space-3-4: calc(var(--space) / 2 + var(--space) / 4);
+  --space: var(--base-lh);
+  --space-1-2: calc(var(--space) / 2);
+  --space-1-4: calc(var(--space) / 4);
+  --space-1-8: calc(var(--space) / 8);
+}
+
+html {
+  font-size: var(--base-size);
+  line-height: var(--base-lh);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote,
+details,
+hr,
+fieldset,
+pre,
+table,
+caption,
+menu {
+  margin: 0 0 var(--space);
+}
+
+ul {
+  padding-left: 1em;
+}
+
+ol {
+  padding-left: 1.6em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+sub,
+sup {
+  font-size: 0.75em;
+  line-height: 1px;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-size: 1em;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn,
+caption {
+  font-style: italic;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid #000;
+  height: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+th,
+td {
+  border-bottom: 1px solid #000;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  vertical-align: bottom;
+  border-bottom-width: 2px;
+}
+
+td,
+table th {
+  padding: var(--space-1-4);
+}
+
+caption {
+  text-align: left;
+  padding-left: var(--space-1-4);
+  padding-right: var(--space-1-4);
+}
+
+input,
+option,
+select {
+  height: calc(var(--space) + var(--space-1-8) * 2);
+}
+
+[type="color"] {
+  width: calc(var(--space) + var(--space-1-8) * 2);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline-block;
+  height: auto;
+}
+
+input:not([type="checkbox"]),
+input:not([type="radio"]),
+textarea {
+  padding: var(--space-1-8);
+}
+
+select {
+  padding: 0 var(--space-1-8);
+}
+
+fieldset {
+  padding: var(--space-1-4) 0;
+
+  border: 0;
+  border-top: 2px solid #000;
+}
+
+legend {
+  padding-right: var(--space-1-4);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.normal {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.not-bold {
+  font-weight: normal;
+}
+
+.not-italic {
+  font-style: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-lower {
+  text-transform: lowercase;
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 52em;
+  width: 100%;
+}
+
+.wrapper-no-center {
+  max-width: 52em;
+  width: 100%;
+}
+
+.max-length {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 36em;
+  width: 100%;
+}
+
+.max-length-short {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 28em;
+  width: 100%;
+}
+
+.max-length-no-center {
+  max-width: 36em;
+  width: 100%;
+}
+
+.tenamega {
+  --font-size: var(--size-tenamega);
+}
+
+.tenakilo {
+  --font-size: var(--size-tenakilo);
+}
+
+.tena {
+  --font-size: var(--size-tena);
+}
+
+.nina {
+  --font-size: var(--size-nina);
+}
+
+.yotta {
+  --font-size: var(--size-yotta);
+}
+
+.zetta {
+  --font-size: var(--size-zetta);
+}
+
+h1,
+.exa {
+  --font-size: var(--size-exa);
+}
+
+h2,
+.peta {
+  --font-size: var(--size-peta);
+}
+
+h3,
+.tera {
+  --font-size: var(--size-tera);
+}
+
+h4,
+.giga {
+  --font-size: var(--size-giga);
+}
+
+h5,
+.mega {
+  --font-size: var(--size-mega);
+}
+
+h6,
+input,
+textarea,
+.kilo {
+  --font-size: var(--size-kilo);
+}
+
+small,
+.milli {
+  --font-size: var(--size-milli);
+}
+
+.micro {
+  --font-size: var(--size-micro);
+}
+
+.nano {
+  --font-size: var(--size-nano);
+}
+
+.pico {
+  --font-size: var(--size-pico);
+}
+
+.tenamega,
+.tenakilo,
+.tena,
+.nina,
+.yotta,
+.zetta,
+.exa,
+.peta,
+.tera,
+.giga,
+.mega,
+.kilo,
+.milli,
+.micro,
+.nano,
+.pico {
+  font-size: var(--font-size);
+  line-height: clamp(
+    var(--base-lh-min) * var(--font-size),
+    var(--base-lh-intersection) * var(--font-size) + var(--base-lh-viewport),
+    var(--base-lh-max) * var(--font-size)
+  );
+}
+
+.push-0 {
+  margin-bottom: 0;
+}
+
+.push-2 {
+  margin-bottom: var(--space-2);
+}
+
+.push-3-2 {
+  margin-bottom: var(--space-3-2);
+}
+
+.push {
+  margin-bottom: var(--space);
+}
+
+.push-1-2 {
+  margin-bottom: var(--space-1-2);
+}
+
+.push-1-4 {
+  margin-bottom: var(--space-1-4);
+}
+
+.push-1-8 {
+  margin-bottom: var(--space-1-8);
+}
+
+.push-r-2 {
+  margin-right: var(--space-2);
+}
+
+.push-r-3-2 {
+  margin-right: var(--space-3-2);
+}
+
+.push-r {
+  margin-right: var(--space);
+}
+
+.push-r-1-2 {
+  margin-right: var(--space-1-2);
+}
+
+.push-r-1-4 {
+  margin-right: var(--space-1-4);
+}
+
+.push-r-1-8 {
+  margin-right: var(--space-1-8);
+}
+
+.island-2 {
+  padding: var(--space-2);
+}
+
+.island-3-2 {
+  padding: var(--space-3-2);
+}
+
+.island {
+  padding: var(--space);
+}
+
+.island-1-2 {
+  padding: var(--space-1-2);
+}
+
+.island-1-4 {
+  padding: var(--space-1-4);
+}
+
+.island-1-8 {
+  padding: var(--space-1-8);
+}
+
+.gutter-2 {
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+
+.gutter-3-2 {
+  padding-left: var(--space-3-2);
+  padding-right: var(--space-3-2);
+}
+
+.gutter {
+  padding-left: var(--space);
+  padding-right: var(--space);
+}
+
+.gutter-1-2 {
+  padding-left: var(--space-1-2);
+  padding-right: var(--space-1-2);
+}
+
+.gutter-1-4 {
+  padding-left: var(--space-1-4);
+  padding-right: var(--space-1-4);
+}
+
+.gutter-1-8 {
+  padding-left: var(--space-1-8);
+  padding-right: var(--space-1-8);
+}
+
+.pad-t-2 {
+  padding-top: var(--space-2);
+}
+
+.pad-t-3-2 {
+  padding-top: var(--space-3-2);
+}
+
+.pad-t {
+  padding-top: var(--space);
+}
+
+.pad-t-1-2 {
+  padding-top: var(--space-1-2);
+}
+
+.pad-t-1-4 {
+  padding-top: var(--space-1-4);
+}
+
+.pad-t-1-8 {
+  padding-top: var(--space-1-8);
+}
+
+.pad-b-2 {
+  padding-bottom: var(--space-2);
+}
+
+.pad-b-3-2 {
+  padding-bottom: var(--space-3-2);
+}
+
+.pad-b {
+  padding-bottom: var(--space);
+}
+
+.pad-b-1-2 {
+  padding-bottom: var(--space-1-2);
+}
+
+.pad-b-1-4 {
+  padding-bottom: var(--space-1-4);
+}
+
+.pad-b-1-8 {
+  padding-bottom: var(--space-1-8);
+}
+
+.i-1 {
+  height: var(--space);
+  width: var(--space);
+}
+
+.i-3-4 {
+  height: calc(var(--space) * 0.75);
+  width: calc(var(--space) * 0.75);
+}
+
+.i-1-2 {
+  height: var(--space-1-2);
+  width: var(--space-1-2);
+}
+
+.i-1-4 {
+  height: var(--space-1-4);
+  width: var(--space-1-4);
+}
+
+.i-1-8 {
+  height: var(--space-1-8);
+  width: var(--space-1-8);
+}
+
+.i-3-2 {
+  height: var(--space-3-2);
+  width: var(--space-3-2);
+}
+
+.i-5-4 {
+  height: calc(var(--space) * 1.25);
+  width: calc(var(--space) * 1.25);
+}
+
+.i-7-4 {
+  height: calc(var(--space) * 1.75);
+  width: calc(var(--space) * 1.75);
+}
+
+.i-2 {
+  height: var(--space-2);
+  width: var(--space-2);
+}
