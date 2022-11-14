@@ -208,31 +208,38 @@ video {
 }
 
 .all-playlists {
-  background-color: var(--color-brand-dark-lightened);
+  background-color: #fff;
   padding: var(--space-1-2);
 }
 
 .all-playlists ul {
   display: grid;
-  grid-template-columns: minmax(10em, 20em);
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  gap: var(--space-1-2);
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
+.all-playlists ul li {
+  display: flex;
+}
+
 .all-playlists a,
 .all-playlists a:visited {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
+  flex-basis: 100%;
   padding: var(--space-1-2);
-  background-color: var(--color-brand);
+  background-color: var(--color-code-darker);
   border-radius: var(--space-1-8);
   line-height: 1.4;
   color: #000;
 }
 
 .all-playlists a:hover {
-  background-color: var(--color-brand-light);
+  background-color: var(--color-brand);
 }
 
 .all-playlists a strong {
@@ -246,8 +253,8 @@ video {
 .all-playlists a svg {
   width: 6em;
   height: 5em;
-  /* align-self: center; */
   margin-bottom: var(--space-1-8);
+  color: var(--color-brand-dark-lightened);
 }
 
 footer {

@@ -26,7 +26,8 @@ desc: "Learning & instruction video playlist companion site to the Learn the Web
           <a href="{{playlist.url}}">
             <svg><use xlink:href="/images/icons.svg#icon-play"/></svg>
             <strong>{{playlist.title}}</strong>
-            <span>{{playlist.videos|size}} videos</span>
+            {% assign total_vids=playlist.videos|size %}
+            <span>{{total_vids}} video{% if total_vids != 1 %}s{% endif %}</span>
           </a>
         </li>
       {% endfor %}
