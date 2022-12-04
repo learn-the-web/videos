@@ -4,6 +4,6 @@ tags: "all devices setup meta viewport width device width initial scale border b
 desc: "Setting up a website so it works well on any Web connected device."
 topic: all-devices-setup
 videos:
-  - id: all-devices-setup
+  - id: 1-all-devices-setup
     title: "All devices setup"
 ---

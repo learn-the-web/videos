@@ -24,8 +24,10 @@ videos:
     title: "Vendor prefixes"
   - id: 10-hero-banner
     title: "Hero banner"
-  - id: 12-filters
+  - id: 11-parallax
     title: "Parallax"
+  - id: 12-filters
+    title: "CSS Filters"
   - id: 13-a11y-effects
-    title: "CSS filters"
+    title: "Accessibility"
 ---
